@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Estudo PMGO — Preparação para Soldado</title>
+
+  <!-- PWA: instalável no celular e offline -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0a1428" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Estudo PMGO" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brasao">🛡️</span>
+      <div>
+        <strong>ESTUDO PMGO</strong>
+        <small>Preparação · Soldado</small>
+      </div>
+    </div>
+    <nav class="nav">
+      <button data-rota="inicio" class="ativo">Início</button>
+      <button data-rota="flashcards">Flashcards</button>
+      <button data-rota="questoes">Questões</button>
+      <button data-rota="aulas">📘 Aulas</button>
+      <button data-rota="resumos">Resumos</button>
+      <button data-rota="simulado">Simulado</button>
+      <button data-rota="desempenho">Desempenho</button>
+      <button data-rota="plano">Plano</button>
+      <button data-rota="prova">Prova &amp; TAF</button>
+      <button data-rota="perfil">🎖️ Perfil</button>
+    </nav>
+  </header>
+
+  <div id="hud" class="hud"><!-- barra de patente/XP/ofensiva --></div>
+
+  <main id="app" class="conteudo"><!-- renderizado via JS --></main>
+
+  <footer class="rodape">
+    Sistema de estudos independente · não é material oficial da PMGO ·
+    sempre confira o edital vigente.
+  </footer>
+
+  <!-- ordem importa: dados → questões → resumos → motores → gamificação → app -->
+  <script src="js/data.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/resumos.js"></script>
+  <script src="js/aulas.js"></script>
+  <script src="js/srs.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/gamify.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Registra o Service Worker (habilita uso offline / instalação como app) -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("sw.js").catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>
