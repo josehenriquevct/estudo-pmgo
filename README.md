@@ -3,6 +3,20 @@
 Sistema de estudos web (roda 100% no navegador, sem instalar nada) para quem
 está se preparando para o concurso de **Soldado da Polícia Militar de Goiás**.
 
+## 📱 Acessar como aplicativo (PWA)
+
+Depois de ativar o **GitHub Pages** (Settings → Pages → branch `main` → `/root`
+→ Save), o app fica público em:
+
+**`https://josehenriquevct.github.io/estudo-pmgo/`**
+
+Para instalar no celular:
+- **iPhone (Safari):** Compartilhar → *Adicionar à Tela de Início*
+- **Android (Chrome):** menu ⋮ → *Instalar app*
+
+O app é um **PWA**: abre em tela cheia, tem ícone próprio e **funciona offline**.
+No mobile, a navegação é por uma **barra inferior** estilo aplicativo.
+
 > **Calibrado pela prova real:** banca **Instituto AOCP**, Edital **002/2022**
 > (Soldado Combatente). A grade de matérias, os pesos, a regra de aprovação
 > (**≥ 60% dos 85 pontos + não zerar nenhuma matéria**), o estilo das questões
